@@ -7,8 +7,8 @@ const keyList = [
   { input: "j", output: "down_arrow" },
   { input: "k", output: "up_arrow" },
   { input: "l", output: "right_arrow" },
-  { input: "i", output: ["right_arrow", "left_command"] },
-  { input: "o", output: ["left_arrow", "left_command"] },
+  { input: "i", output: ["right_arrow", "left_option"] },
+  { input: "o", output: ["left_arrow", "right_option"] },
 ];
 
 const type = "basic";

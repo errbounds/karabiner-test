@@ -3,7 +3,7 @@
   "rules": [
     {
       "description": "capslock arrow mode",
-      "manipulator": [
+      "manipulators": [
         {
           "from": {
             "key_code": "caps_lock"

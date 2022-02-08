@@ -1,52 +1,58 @@
 {
-  "manipulator": [
+  "title": "capslock arrow mode",
+  "rules": [
     {
-      "from": {
-        "key_code": "caps_lock"
-      },
-      "to": [
+      "description": "capslock arrow mode",
+      "manipulator": [
         {
-          "set_variable": {
-            "name": "caps_arrows_mdoe",
-            "value": 1
-          }
-        }
-      ],
-      "to_after_key_up": [
+          "from": {
+            "key_code": "caps_lock"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "caps_arrows_mdoe",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "caps_arrows_mdoe",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "out"
+            }
+          ],
+          "type": "basic"
+        },
         {
-          "set_variable": {
-            "name": "caps_arrows_mdoe",
-            "value": 0
-          }
+          "condition": [
+            {
+              "name": "caps_arrows_mdoe",
+              "type": "variable_if",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "type": "basic"
         }
-      ],
-      "to_if_alone": [
-        {
-          "key_code": "out"
-        }
-      ],
-      "type": "basic"
-    },
-    {
-      "condition": [
-        {
-          "name": "caps_arrows_mdoe",
-          "type": "variable_if",
-          "value": 1
-        }
-      ],
-      "from": {
-        "key_code": "h",
-        "modifiers": {
-          "optional": ["any"]
-        }
-      },
-      "to": [
-        {
-          "key_code": "left_arrow"
-        }
-      ],
-      "type": "basic"
+      ]
     }
   ]
 }

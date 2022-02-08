@@ -188,7 +188,7 @@
                     },
                     "to": [
                         {
-                            "key_code": "delete_forword"
+                            "key_code": "delete_forward"
                         }
                     ],
                     "type": "basic"

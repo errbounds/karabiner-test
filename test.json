@@ -24,11 +24,6 @@
               }
             }
           ],
-          "to_if_alone": [
-            {
-              "key_code": "left_control"
-            }
-          ],
           "type": "basic"
         },
         {

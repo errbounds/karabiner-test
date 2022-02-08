@@ -32,7 +32,7 @@
           "type": "basic"
         },
         {
-          "condition": [
+          "conditions": [
             {
               "name": "caps_arrows_mode",
               "type": "variable_if",

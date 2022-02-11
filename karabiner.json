@@ -24,6 +24,16 @@
                             }
                         }
                     ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "left_control",
+                            "modifiers": [
+                                "left_shift",
+                                "left_command",
+                                "left_option"
+                            ]
+                        }
+                    ],
                     "type": "basic"
                 },
                 {
@@ -53,6 +63,11 @@
                             }
                         }
                     ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "left_option"
+                        }
+                    ],
                     "type": "basic"
                 },
                 {
@@ -80,6 +95,11 @@
                                 "name": "caps_shift_mode",
                                 "value": 0
                             }
+                        }
+                    ],
+                    "to_if_alone": [
+                        {
+                            "key_code": "left_shift"
                         }
                     ],
                     "type": "basic"

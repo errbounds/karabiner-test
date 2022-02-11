@@ -25,17 +25,24 @@ function getCapsMode() {
     from: { key_code: "caps_lock" },
     to: [{ set_variable: { name: "caps_mode", value: 1 } }],
     to_after_key_up: [{ set_variable: { name: "caps_mode", value: 0 } }],
+    to_if_alone: [
+      {
+        key_code: "left_control",
+        modifiers: ["left_shift", "left_command", "left_option"],
+      },
+    ],
     type: maniType,
   };
 }
 
 // caps_opt_mode, caps_shift_mode
-function getModifierMode({ name, from }) {
+function getModifierMode({ name, from, to }) {
   return {
     conditions: [{ name: "caps_mode", value: 1, type: condiType }],
     from: { key_code: from },
     to: [{ set_variable: { name: name, value: 1 } }],
     to_after_key_up: [{ set_variable: { name: name, value: 0 } }],
+    to_if_alone: [{ key_code: to }],
     type: maniType,
   };
 }

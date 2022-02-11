@@ -43,12 +43,6 @@
                                 "name": "caps_opt_mode",
                                 "value": 1
                             }
-                        },
-                        {
-                            "set_variable": {
-                                "name": "caps_mode",
-                                "value": 0
-                            }
                         }
                     ],
                     "to_after_key_up": [
@@ -56,12 +50,6 @@
                             "set_variable": {
                                 "name": "caps_opt_mode",
                                 "value": 0
-                            }
-                        },
-                        {
-                            "set_variable": {
-                                "name": "caps_mode",
-                                "value": 1
                             }
                         }
                     ],
@@ -84,12 +72,6 @@
                                 "name": "caps_shift_mode",
                                 "value": 1
                             }
-                        },
-                        {
-                            "set_variable": {
-                                "name": "caps_mode",
-                                "value": 0
-                            }
                         }
                     ],
                     "to_after_key_up": [
@@ -97,12 +79,6 @@
                             "set_variable": {
                                 "name": "caps_shift_mode",
                                 "value": 0
-                            }
-                        },
-                        {
-                            "set_variable": {
-                                "name": "caps_mode",
-                                "value": 1
                             }
                         }
                     ],
@@ -618,9 +594,8 @@
                     },
                     "to": [
                         {
-                            "key_code": [
-                                "delete_forward"
-                            ]
+                            "key_code": "delete_forward",
+                            "modifiers": []
                         }
                     ],
                     "type": "basic"
@@ -638,8 +613,8 @@
                     },
                     "to": [
                         {
-                            "key_code": [
-                                "left_arrow",
+                            "key_code": "left_arrow",
+                            "modifiers": [
                                 "left_command"
                             ]
                         }
@@ -659,8 +634,8 @@
                     },
                     "to": [
                         {
-                            "key_code": [
-                                "right_arrow",
+                            "key_code": "right_arrow",
+                            "modifiers": [
                                 "right_command"
                             ]
                         }

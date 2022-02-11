@@ -34,14 +34,8 @@ function getModifierMode({ name, from }) {
   return {
     conditions: [{ name: "caps_mode", value: 1, type: condiType }],
     from: { key_code: from },
-    to: [
-      { set_variable: { name: name, value: 1 } },
-      { set_variable: { name: "caps_mode", value: 0 } },
-    ],
-    to_after_key_up: [
-      { set_variable: { name: name, value: 0 } },
-      { set_variable: { name: "caps_mode", value: 1 } },
-    ],
+    to: [{ set_variable: { name: name, value: 1 } }],
+    to_after_key_up: [{ set_variable: { name: name, value: 0 } }],
     type: maniType,
   };
 }
@@ -86,7 +80,12 @@ function getFnKeys({ from, to }) {
   return {
     conditions: [{ name: "caps_mode", value: 1, type: condiType }],
     from: { key_code: from },
-    to: [{ key_code: to }],
+    to: [
+      {
+        key_code: to[0],
+        modifiers: [...to.filter((item, index) => index > 0)],
+      },
+    ],
     type: maniType,
   };
 }

@@ -6,7 +6,12 @@
             "manipulators": [
                 {
                     "from": {
-                        "key_code": "caps_lock"
+                        "key_code": "caps_lock",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -24,16 +29,6 @@
                             }
                         }
                     ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "left_control",
-                            "modifiers": [
-                                "left_shift",
-                                "left_command",
-                                "left_option"
-                            ]
-                        }
-                    ],
                     "type": "basic"
                 },
                 {
@@ -45,7 +40,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "q"
+                        "key_code": "q",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -63,11 +63,6 @@
                             }
                         }
                     ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "left_option"
-                        }
-                    ],
                     "type": "basic"
                 },
                 {
@@ -79,7 +74,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "w"
+                        "key_code": "w",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -97,11 +97,6 @@
                             }
                         }
                     ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "left_shift"
-                        }
-                    ],
                     "type": "basic"
                 },
                 {
@@ -123,7 +118,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "h"
+                        "key_code": "h",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -152,7 +152,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "j"
+                        "key_code": "j",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -181,7 +186,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "k"
+                        "key_code": "k",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -210,7 +220,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "l"
+                        "key_code": "l",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -239,7 +254,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "h"
+                        "key_code": "h",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -270,7 +290,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "j"
+                        "key_code": "j",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -301,7 +326,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "k"
+                        "key_code": "k",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -332,7 +362,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "l"
+                        "key_code": "l",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -363,7 +398,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "h"
+                        "key_code": "h",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -394,7 +434,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "j"
+                        "key_code": "j",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -425,7 +470,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "k"
+                        "key_code": "k",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -456,7 +506,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "l"
+                        "key_code": "l",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -487,7 +542,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "h"
+                        "key_code": "h",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -519,7 +579,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "j"
+                        "key_code": "j",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -551,7 +616,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "k"
+                        "key_code": "k",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {
@@ -583,7 +653,12 @@
                         }
                     ],
                     "from": {
-                        "key_code": "l"
+                        "key_code": "l",
+                        "modifiers": {
+                            "optional": [
+                                "any"
+                            ]
+                        }
                     },
                     "to": [
                         {

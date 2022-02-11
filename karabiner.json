@@ -1,0 +1,673 @@
+{
+    "title": "Capslock Shortcut Mode",
+    "rules": [
+        {
+            "description": "capslock + hjkl to arrow, hjkl + q/w to option/shift",
+            "manipulator": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "caps_mode",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "caps_mode",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "q"
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "caps_opt_mode",
+                                "value": 1
+                            }
+                        },
+                        {
+                            "set_variable": {
+                                "name": "caps_mode",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "caps_opt_mode",
+                                "value": 0
+                            }
+                        },
+                        {
+                            "set_variable": {
+                                "name": "caps_mode",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "w"
+                    },
+                    "to": [
+                        {
+                            "set_variable": {
+                                "name": "caps_shift_mode",
+                                "value": 1
+                            }
+                        },
+                        {
+                            "set_variable": {
+                                "name": "caps_mode",
+                                "value": 0
+                            }
+                        }
+                    ],
+                    "to_after_key_up": [
+                        {
+                            "set_variable": {
+                                "name": "caps_shift_mode",
+                                "value": 0
+                            }
+                        },
+                        {
+                            "set_variable": {
+                                "name": "caps_mode",
+                                "value": 1
+                            }
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "h"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": []
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "j"
+                    },
+                    "to": [
+                        {
+                            "key_code": "down_arrow",
+                            "modifiers": []
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "k"
+                    },
+                    "to": [
+                        {
+                            "key_code": "up_arrow",
+                            "modifiers": []
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": []
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "h"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "j"
+                    },
+                    "to": [
+                        {
+                            "key_code": "down_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "k"
+                    },
+                    "to": [
+                        {
+                            "key_code": "up_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "h"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "j"
+                    },
+                    "to": [
+                        {
+                            "key_code": "down_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "k"
+                    },
+                    "to": [
+                        {
+                            "key_code": "up_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 0,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "h"
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow",
+                            "modifiers": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "j"
+                    },
+                    "to": [
+                        {
+                            "key_code": "down_arrow",
+                            "modifiers": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "k"
+                    },
+                    "to": [
+                        {
+                            "key_code": "up_arrow",
+                            "modifiers": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_opt_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        },
+                        {
+                            "name": "caps_shift_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "l"
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow",
+                            "modifiers": [
+                                "left_option",
+                                "left_shift"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
+            "description": "capslock + i/o to start/end of line, capslock + x to delete",
+            "manipulator": [
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "x"
+                    },
+                    "to": [
+                        {
+                            "key_code": [
+                                "delete_forward"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "i"
+                    },
+                    "to": [
+                        {
+                            "key_code": [
+                                "left_arrow",
+                                "left_command"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "conditions": [
+                        {
+                            "name": "caps_mode",
+                            "value": 1,
+                            "type": "variable_if"
+                        }
+                    ],
+                    "from": {
+                        "key_code": "o"
+                    },
+                    "to": [
+                        {
+                            "key_code": [
+                                "right_arrow",
+                                "right_command"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        }
+    ]
+}

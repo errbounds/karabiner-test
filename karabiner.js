@@ -119,7 +119,7 @@ const rules = [
   },
   {
     description: "capslock + i/o to start/end of line, capslock + x to delete",
-    manipulator: fnKeys.map((fnKey) => getFnKeys(fnKey)),
+    manipulators: fnKeys.map((fnKey) => getFnKeys(fnKey)),
   },
 ];
 

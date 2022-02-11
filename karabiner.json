@@ -604,7 +604,7 @@
         },
         {
             "description": "capslock + i/o to start/end of line, capslock + x to delete",
-            "manipulator": [
+            "manipulators": [
                 {
                     "conditions": [
                         {

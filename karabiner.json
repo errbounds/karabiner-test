@@ -72,7 +72,7 @@
           "type": "basic"
         },
         {
-          "conditoins": [
+          "conditions": [
             {
               "name": "caps_lock_pressed",
               "value": 1,
@@ -223,7 +223,7 @@
       ]
     },
     {
-      "description": "capslock + key to hyper + key",
+      "description": "capslock + shortcutKey to hyper + shortcutKey",
       "manipulators": [
         {
           "conditions": [

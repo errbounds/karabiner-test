@@ -62,7 +62,7 @@ function getCapsShift() {
 
 function getCapsDelete() {
   return {
-    conditoins: conditionLock,
+    conditions: conditionLock,
     from: { key_code: "x", modifiers: { optional: ["any"] } },
     to: [{ key_code: "delete_forward" }],
     type: "basic",

@@ -40,7 +40,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "option"
+                        "key_code": "q"
                     },
                     "to": [
                         {

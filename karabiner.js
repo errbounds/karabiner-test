@@ -1,11 +1,18 @@
 const fs = require("fs");
-const maniType = "basic";
-const condiType = "variable_if";
 
-const modifierMode = [
-  { name: "caps_opt_mode", from: "q", to: "left_option" },
-  { name: "caps_shift_mode", from: "w", to: "left_shift" },
+const conditionLock = [
+  { name: "caps_lock_pressed", value: 1, type: "variable_if" },
 ];
+function getCapsMode() {
+  return {
+    from: { key_code: "caps_lock", modifiers: { optional: ["any"] } },
+    to: [{ set_variable: { name: "caps_lock_pressed", value: 1 } }],
+    to_after_key_up: [
+      { set_variable: { name: "caps_lock_pressed", value: 0 } },
+    ],
+    type: "basic",
+  };
+}
 
 const arrowKeys = [
   { from: "h", to: "left_arrow" },
@@ -13,125 +20,110 @@ const arrowKeys = [
   { from: "k", to: "up_arrow" },
   { from: "l", to: "right_arrow" },
 ];
-const fnKeys = [
-  { from: "x", to: ["delete_forward"] },
+function getCapsArrowKey({ from, to }) {
+  return {
+    conditions: conditionLock,
+    from: { key_code: from, modifiers: { optional: ["any"] } },
+    to: [{ key_code: to }],
+    type: "basic",
+  };
+}
+
+const lineKeys = [
   { from: "i", to: ["left_arrow", "left_command"] },
-  { from: "o", to: ["right_arrow", "right_command"] },
+  { from: "o", to: ["right_arrow", "left_command"] },
 ];
-
-// caps_mode
-function getCapsMode() {
+function getCapsLineKey({ from, to }) {
   return {
-    from: { key_code: "caps_lock" },
-    to: [{ set_variable: { name: "caps_mode", value: 1 } }],
-    to_after_key_up: [{ set_variable: { name: "caps_mode", value: 0 } }],
-    to_if_alone: [
-      {
-        key_code: "left_control",
-        modifiers: ["left_shift", "left_command", "left_option"],
-      },
-    ],
-    type: maniType,
+    conditions: conditionLock,
+    from: { key_code: from, modifiers: { optional: ["any"] } },
+    to: [{ key_code: to[0], modifiers: to.filter((item, index) => index > 0) }],
+    type: "basic",
   };
 }
 
-// caps_opt_mode, caps_shift_mode
-function getModifierMode({ name, from, to }) {
+function getCapsOption() {
   return {
-    conditions: [{ name: "caps_mode", value: 1, type: condiType }],
-    from: { key_code: from },
-    to: [{ set_variable: { name: name, value: 1 } }],
-    to_after_key_up: [{ set_variable: { name: name, value: 0 } }],
-    to_if_alone: [{ key_code: to }],
-    type: maniType,
+    conditions: conditionLock,
+    from: { key_code: "q", modifiers: { optional: ["any"] } },
+    to: [{ key_code: "left_option" }],
+    type: "basic",
   };
 }
 
-// [caps/caps_opt/caps_shift]
-// [[100], [101], [110], [111]]
-const stat = [0, 1];
-function getArrowModeConditions(modifierMode) {
-  const conditionsList = [];
-  for (let i = 0; i < stat.length; i++) {
-    const line = [];
-    for (let j = 0; j < stat.length; j++) {
-      conditionsList.push({
-        conditions: [
-          { name: "caps_mode", value: 1, type: condiType },
-          { name: modifierMode[0].name, value: stat[i], type: condiType },
-          { name: modifierMode[1].name, value: stat[j], type: condiType },
-        ],
-        to: [
-          stat[i] ? modifierMode[0].to : null,
-          stat[j] ? modifierMode[1].to : null,
-        ].filter((item) => item != null),
-      });
-    }
-  }
-  return conditionsList;
-}
-const arrowModeConditions = getArrowModeConditions(modifierMode);
-
-// [100, 101, 110, 111] * [h, j, k, l] -> 12
-function getArrowModeKeys(arrowMode, arrowKey) {
+function getCapsShift() {
   return {
-    conditions: arrowMode.conditions,
-    from: { key_code: arrowKey.from },
-    to: [{ key_code: arrowKey.to, modifiers: arrowMode.to }],
-    type: maniType,
+    conditions: conditionLock,
+    from: { key_code: "w", modifiers: { optional: ["any"] } },
+    to: [{ key_code: "left_shift" }],
+    type: "basic",
   };
 }
 
-// [i, o, x]
-function getFnKeys({ from, to }) {
+function getCapsDelete() {
   return {
-    conditions: [{ name: "caps_mode", value: 1, type: condiType }],
+    conditoins: conditionLock,
+    from: { key_code: "x", modifiers: { optional: ["any"] } },
+    to: [{ key_code: "delete_forward" }],
+    type: "basic",
+  };
+}
+
+const shortcutKeys = [
+  "semicolon",
+  "1",
+  "2",
+  "3",
+  "4",
+  "a",
+  "s",
+  "d",
+  "f",
+  "e",
+  "r",
+  "c",
+  "v",
+  "spacebar",
+  "tab",
+];
+function getCapsShortcutKey(from) {
+  return {
+    conditions: conditionLock,
     from: { key_code: from },
     to: [
       {
-        key_code: to[0],
-        modifiers: [...to.filter((item, index) => index > 0)],
+        key_code: from,
+        modifiers: [
+          "left_option",
+          "left_shift",
+          "left_control",
+          "left_command",
+        ],
       },
     ],
-    type: maniType,
+    type: "basic",
   };
 }
 
-//============================================================
-const title = "Capslock Shortcut Mode";
+const title = "CapsLock Enhancement 1";
 const rules = [
   {
-    description: "capslock + hjkl to arrow, hjkl + q/w to option/shift",
+    description: "capslock + hjkl to arrow",
     manipulators: [
       getCapsMode(),
-      ...modifierMode.reduce(
-        (acc, mode) => [...acc, getModifierMode(mode)],
-        []
-      ),
-      ...arrowModeConditions.reduce(
-        (acc, conditions) => [
-          ...acc,
-          ...arrowKeys.reduce(
-            (acc2, arrowKey) => [
-              ...acc2,
-              getArrowModeKeys(conditions, arrowKey),
-            ],
-            []
-          ),
-        ],
-        []
-      ),
+      getCapsOption(),
+      getCapsShift(),
+      getCapsDelete(),
+      ...lineKeys.map((key) => getCapsLineKey(key)),
+      ...arrowKeys.map((key) => getCapsArrowKey(key)),
     ],
   },
   {
-    description: "capslock + i/o to start/end of line, capslock + x to delete",
-    manipulators: fnKeys.map((fnKey) => getFnKeys(fnKey)),
+    description: "capslock + shortcutKey to hyper + shortcutKey",
+    manipulators: [...shortcutKeys.map((key) => getCapsShortcutKey(key))],
   },
 ];
 
 const data = JSON.stringify({ title, rules }, null, 4);
-
-// console.log(data);
-// container.textContent = data;
 
 fs.writeFileSync("./karabiner.json", data);

@@ -2,5 +2,4 @@ karabiner://karabiner/assets/complex_modifications/import?url=https://raw.github
 
 karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/forstackup/karabiner-test/master/karabiner.json
 
-
-karabiner://karabiner/assets/complex_modifications/import?url=file://Users/user/develop/karabiner/karabiner.json
+karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/forstackup/karabiner-test/master/test.json

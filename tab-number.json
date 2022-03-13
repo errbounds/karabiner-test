@@ -35,7 +35,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -52,7 +53,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -69,7 +71,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -86,7 +89,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -103,7 +107,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -120,7 +125,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -137,7 +143,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -154,7 +161,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -171,7 +179,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {
@@ -188,7 +197,8 @@
                     "conditions": [
                         {
                             "name": "tab_pressed",
-                            "value": 1
+                            "value": 1,
+                            "type": "variable_if"
                         }
                     ],
                     "from": {

@@ -24,7 +24,7 @@ const numberList = [
 ];
 function getTabNumber(from, to) {
   return {
-    conditions: [{ name: "tab_pressed", value: 1 }],
+    conditions: [{ name: "tab_pressed", value: 1, type: "variable_if" }],
     from: { key_code: from },
     to: [{ key_code: to }],
     type: "basic",

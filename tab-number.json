@@ -112,7 +112,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "l"
+                        "key_code": "k"
                     },
                     "to": [
                         {
@@ -130,7 +130,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "semicolon"
+                        "key_code": "l"
                     },
                     "to": [
                         {
@@ -148,7 +148,7 @@
                         }
                     ],
                     "from": {
-                        "key_code": "quote"
+                        "key_code": "semicolon"
                     },
                     "to": [
                         {

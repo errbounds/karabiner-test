@@ -18,9 +18,9 @@ const numberList = [
   ["k", "4"],
   ["l", "5"],
   ["semicolon", "6"],
-  ["o", "7"],
-  ["p", "8"],
-  ["open_bracket", "9"],
+  ["i", "7"],
+  ["o", "8"],
+  ["p", "9"],
 ];
 function getTabNumber(from, to) {
   return {
